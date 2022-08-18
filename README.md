@@ -37,7 +37,8 @@ time.Sleep(200 * time.Millisecond)
 
 ## Random
 ```go
-// Find something nice for this
+// Random integer between [min and max[
+rand.Intn(max-min)+min
 ```
 
 ## JSON
