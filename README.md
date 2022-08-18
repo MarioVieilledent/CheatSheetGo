@@ -29,12 +29,6 @@ func receiver(c chan string) {
 }
 ```
 
-## Delay
-```go
-time.Sleep(3 * time.Second)
-time.Sleep(200 * time.Millisecond)
-```
-
 ## Random
 ```go
 // Random integer between [min and max[
@@ -72,4 +66,22 @@ if err != nil {
 }
 
 str := string(body)
+```
+
+## Serve static files
+```go
+port := "3000"
+fs := http.FileServer(http.Dir("./static"))
+http.Handle("/", fs)
+fmt.Println("Listening on", port)
+err := http.ListenAndServe(":"+port, nil)
+if err != nil {
+	fmt.Println("Error serving static files")
+}
+```
+
+## Delay
+```go
+time.Sleep(3 * time.Second)
+time.Sleep(200 * time.Millisecond)
 ```
