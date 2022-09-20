@@ -1,4 +1,4 @@
-# Cheat Sheet Go
+# Cheat Sheet `Go`
 
 ## Channels
 ```go
@@ -33,6 +33,8 @@ func receiver(c chan string) {
 ```go
 // Random integer between [min and max[
 rand.Intn(max-min)+min
+// Random float
+min + rand.Float64() * (max - min)
 ```
 
 ## JSON
@@ -50,6 +52,12 @@ if err != nil {
     fmt.Println("Error parsing JSON :", err)
 }
 ```
+
+## Sort a slice
+```go
+sort.Slice(data, func(i, j int) bool {
+	return data[i].Elem > data[j].Elem
+})
 
 ## HTTP Request
 ```go
@@ -85,7 +93,6 @@ if err != nil {
 time.Sleep(3 * time.Second)
 time.Sleep(200 * time.Millisecond)
 ```
-
 
 ## Gin Quick Start
 ```go
